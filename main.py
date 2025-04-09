@@ -1,8 +1,25 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, conlist
 import math, json
 
 app = FastAPI()
+
+# Set allowed origins
+origins = [
+    "http://localhost:3000",  # React dev server
+    # You can add more origins here
+]
+
+# Add the CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  # or ["*"] to allow all (not recommended for prod)
+    allow_credentials=True,
+    allow_methods=["*"],  # or restrict to ["GET", "POST"] etc.
+    allow_headers=["*"],
+)
+
 
 # Just pass the list length directly in v2
 class InputData(BaseModel):
