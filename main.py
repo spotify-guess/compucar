@@ -59,7 +59,7 @@ def run_my_script(values: list[int]) -> str:
 
     # car names so we can map the suggested vector to the car
     car_name_vectors = [
-        f"{entry['make']} {entry['model']}"
+        f"{entry['make']} {entry['model']} {entry['make']}"
         for entry in data
     ]
        
@@ -99,4 +99,4 @@ def run_my_script(values: list[int]) -> str:
 @app.post("/run-script")
 async def run_script(data: InputData):
     output = run_my_script(data.values)
-    return {"output": output}
+    return {"Cars with highest similarities": output}
