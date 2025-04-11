@@ -99,4 +99,4 @@ def run_my_script(values: list[int]) -> str:
 @app.post("/run-script")
 async def run_script(data: InputData):
     output = run_my_script(data.values)
-    return {"Cars with highest similarities": output}
+    return {"output": output}
