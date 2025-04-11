@@ -59,7 +59,7 @@ def run_my_script(values: list[int]) -> str:
 
     # car names so we can map the suggested vector to the car
     car_name_vectors = [
-        f"{entry['make']} {entry['model']} {entry['make']}"
+        f"{entry['make']} {entry['model']} {entry['body_style']}"
         for entry in data
     ]
        
