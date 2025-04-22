@@ -7,8 +7,7 @@ app = FastAPI()
 
 # Set allowed origins
 origins = [
-    "http://localhost:3000",
-    "http://compucar.io/"
+    "http://compucar.io/",
 ]
 
 # Add the CORS middleware
@@ -19,7 +18,6 @@ app.add_middleware(
     allow_methods=["*"],  # or restrict to ["GET", "POST"] etc.
     allow_headers=["*"],
 )
-
 
 # Just pass the list length directly in v2
 class InputData(BaseModel):
