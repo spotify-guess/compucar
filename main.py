@@ -7,8 +7,8 @@ app = FastAPI()
 
 # Set allowed origins
 origins = [
-    "http://localhost:3000",  # React dev server
-    # You can add more origins here
+    "http://localhost:3000",
+    "http://compucar.io/"
 ]
 
 # Add the CORS middleware
